@@ -45,4 +45,4 @@ export const i18n = function(fn) {
   i18nHandler = fn || i18nHandler;
 };
 
-export default { use, t, i18n };
+export default { use: use, t: t, i18n: i18n };

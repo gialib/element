@@ -71,7 +71,7 @@ export const generateId = function() {
   return Math.floor(Math.random() * 10000);
 };
 
-export const valueEquals = (a, b) => {
+export const valueEquals = function(a, b) {
   // see: https://stackoverflow.com/questions/3115982/how-to-check-if-two-arrays-are-equal-with-javascript
   if (a === b) return true;
   if (!(a instanceof Array)) return false;
@@ -83,7 +83,9 @@ export const valueEquals = (a, b) => {
   return true;
 };
 
-export const escapeRegexpString = (value = '') => String(value).replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');
+export const escapeRegexpString = function(value = '') {
+  String(value || "").replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');
+}
 
 // TODO: use native Array.find, Array.findIndex when IE support is dropped
 export const arrayFindIndex = function(arr, pred) {
